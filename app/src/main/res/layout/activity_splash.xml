@@ -8,7 +8,7 @@
     android:fitsSystemWindows="true"
     android:background="@color/white"
     android:orientation="vertical"
-    tools:context=".featureModules.onBoardingModule.ui.activities.SplashActivity">
+    tools:context=".featureModules.onBoardingModule.ui.splash.activities.SplashActivity">
 
     <ImageView
         android:layout_width="100dp"

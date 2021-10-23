@@ -10,9 +10,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AuthenticationReimagined">
         <activity
-            android:name=".featureModules.onBoardingModule.ui.activities.SplashActivity"
-            android:theme="@style/SplashTheme"
-            android:exported="true">
+            android:name=".featureModules.onBoardingModule.ui.login.activities.LoginActivity"
+            android:exported="false"
+            android:theme="@style/SplashTheme"/>
+        <activity
+            android:name=".featureModules.onBoardingModule.ui.splash.activities.SplashActivity"
+            android:exported="true"
+            android:theme="@style/SplashTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -22,11 +26,13 @@
         <activity
             android:name=".MainActivity"
             android:exported="true">
-<!--            <intent-filter>-->
-<!--                <action android:name="android.intent.action.MAIN" />-->
 
-<!--                <category android:name="android.intent.category.LAUNCHER" />-->
-<!--            </intent-filter>-->
+            <!-- <intent-filter> -->
+            <!-- <action android:name="android.intent.action.MAIN" /> -->
+
+
+            <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
+            <!-- </intent-filter> -->
         </activity>
     </application>
 
