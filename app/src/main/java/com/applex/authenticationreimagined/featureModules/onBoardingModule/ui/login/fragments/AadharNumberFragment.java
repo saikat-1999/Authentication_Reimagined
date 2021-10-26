@@ -38,7 +38,7 @@ public class AadharNumberFragment extends Fragment {
 
     EditText zip_loc,passcode;
     Button choose, unzip;
-    String src;
+    String src, filename, filepath;
 
     public AadharNumberFragment() {
         // Required empty public constructor
@@ -143,9 +143,10 @@ public class AadharNumberFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 try {
-                    String destinationAddress = "/storage/emulated/0/Utsav";
-                    //unzip(new File(src), new File(destinationAddress));
+                    String destinationAddress = Environment.getExternalStorageDirectory().getPath().toString()+"/Aadhar";
                     new ZipFile(src, passcode.getText().toString().toCharArray()).extractAll(destinationAddress);
+                    filepath = Environment.getExternalStorageDirectory().getPath().toString()+"/Aadhar/"+filename;
+                    Toast.makeText(getContext(), filepath, Toast.LENGTH_SHORT).show();
                 } catch (ZipException e) {
                     Toast.makeText(getContext(), e.toString(), Toast.LENGTH_SHORT).show();
                 }
@@ -159,7 +160,9 @@ public class AadharNumberFragment extends Fragment {
         super.onActivityResult(requestCode, resultCode, data);
         Uri uri = data.getData();
         src = getRealPathFromURI(uri);
-        zip_loc.setText(src);
+        String[] params = src.split("/");
+        filename = params[params.length-1].replace("zip","xml");
+        zip_loc.setText(filename);
         //Toast.makeText(getContext(), src, Toast.LENGTH_SHORT).show();
     }
     private String getRealPathFromURI(Uri contentURI) {
