@@ -92,7 +92,7 @@ public class AadharNumberFragment extends Fragment {
                     zipfile.extractFile(filename.replace("zip","xml"),destinationAddress);
                     //new ZipFile(src, passcode.getText().toString().toCharArray()).extractAll(destinationAddress);
                     //new ZipFile(src, passcode.getText().toString().toCharArray()).extractFile(filename.replace("zip","xml"), destinationAddress, "unzipped.xml");
-                    filepath = new StringBuilder().append(Environment.getExternalStorageDirectory().getPath()).append("/").append(filename).toString();
+                    filepath = new StringBuilder().append(Environment.getExternalStorageDirectory().getPath()).append("/").append(filename.replace("zip","xml")).toString();
                     Toast.makeText(getContext(), filepath, Toast.LENGTH_SHORT).show();
                 } catch (Exception e) {
                     Toast.makeText(getContext(), e.toString(), Toast.LENGTH_SHORT).show();
