@@ -24,6 +24,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.applex.authenticationreimagined.MainActivity;
 import com.applex.authenticationreimagined.R;
 
 import net.lingala.zip4j.ZipFile;
