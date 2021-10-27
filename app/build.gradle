@@ -45,5 +45,7 @@ dependencies {
 
     implementation 'com.itkacher.okhttpprofiler:okhttpprofiler:1.0.7'
 
+    implementation 'androidmads.library.qrgenearator:QRGenearator:1.0.3'
+
     implementation 'net.lingala.zip4j:zip4j:2.9.0'
 }

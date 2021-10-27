@@ -20,6 +20,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.applex.authenticationreimagined.MainActivity;
 import com.applex.authenticationreimagined.R;
 
 import net.lingala.zip4j.ZipFile;
@@ -37,7 +38,7 @@ import java.util.zip.ZipInputStream;
 public class AadharNumberFragment extends Fragment {
 
     EditText zip_loc,passcode;
-    Button choose, unzip;
+    Button choose, unzip,qr;
     String src;
 
     public AadharNumberFragment() {
@@ -63,6 +64,8 @@ public class AadharNumberFragment extends Fragment {
         choose = getActivity().findViewById(R.id.choose_zip);
         unzip = getActivity().findViewById(R.id.unzip);
         passcode = getActivity().findViewById(R.id.passcode);
+
+        qr = getActivity().findViewById(R.id.qr);
 //        enter_aadhar.addTextChangedListener(new TextWatcher() {
 //
 //            private static final int TOTAL_SYMBOLS = 14; // size of pattern 0000-0000-0000-0000
@@ -152,6 +155,13 @@ public class AadharNumberFragment extends Fragment {
             }
         });
 
+        qr.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getContext(),"hiii",Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(getContext(), MainActivity.class));
+            }
+        });
     }
 
     @Override

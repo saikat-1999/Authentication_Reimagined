@@ -55,6 +55,14 @@
             app:layout_constraintTop_toBottomOf="@+id/choose_zip"
             android:text="Unzip"/>
 
+        <Button
+            android:id="@+id/qr"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toRightOf="@+id/aadhar_no"
+            app:layout_constraintTop_toBottomOf="@+id/unzip"
+            android:text="QR"/>
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
