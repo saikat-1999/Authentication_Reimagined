@@ -20,6 +20,7 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -40,10 +41,16 @@ public class MainActivity extends AppCompatActivity {
     private String data="";
     private Bitmap bitmap;
     private long mLastClickTime = 0;
+    private Button qr;
+    private TextView image_text, title_text;
+    private LinearLayout layout;
+    private ImageView qrImageview, shareQr;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_SECURE, WindowManager.LayoutParams.FLAG_SECURE);
         setContentView(R.layout.activity_main);
 
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_SECURE,
@@ -57,7 +64,12 @@ public class MainActivity extends AppCompatActivity {
 
         data = refid + "\n" + name + "\n" + country;
 
-        Button qr = findViewById(R.id.qr);
+        qr = findViewById(R.id.qr);
+        image_text = findViewById(R.id.image_text);
+        title_text = findViewById(R.id.title_text);
+        layout = findViewById(R.id.layout);
+        qrImageview = findViewById(R.id.qrImageview);
+        shareQr = findViewById(R.id.shareQr);
 
         qr.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -109,12 +121,12 @@ public class MainActivity extends AppCompatActivity {
 
     private void GenerateQR(String code) {
 
-        Dialog dialog = new Dialog(MainActivity.this);
-        dialog.setContentView(R.layout.dialog_qr_code);
-        Objects.requireNonNull(dialog.getWindow()).setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-
-        ImageView qrImagevew = dialog.findViewById(R.id.qrImageview);
-        ImageView qrshare = dialog.findViewById(R.id.shareQr);
+//        Dialog dialog = new Dialog(MainActivity.this);
+//        dialog.setContentView(R.layout.dialog_qr_code);
+//        Objects.requireNonNull(dialog.getWindow()).setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+//
+//        ImageView qrImagevew = dialog.findViewById(R.id.qrImageview);
+//        ImageView qrshare = dialog.findViewById(R.id.shareQr);
 
         QRGEncoder qrgEncoder;
         WindowManager manager=(WindowManager)getSystemService(WINDOW_SERVICE);
@@ -133,16 +145,20 @@ public class MainActivity extends AppCompatActivity {
 
         try {
             bitmap = qrgEncoder.encodeAsBitmap();
-            qrImagevew.setImageBitmap(bitmap);
+//            image_text.setVisibility(View.GONE);
+//            layout.setVisibility(View.VISIBLE);
+            qrImageview.setImageBitmap(bitmap);
 
         }
         catch (WriterException e) {
+//            image_text.setVisibility(View.VISIBLE);
+//            layout.setVisibility(View.GONE);
             Toast.makeText(getApplicationContext(), "Something went wrong...", Toast.LENGTH_SHORT).show();
         }
-        dialog.show();
+//        dialog.show();
         if(bitmap != null) {
             Bitmap finalBitmap = bitmap;
-            qrshare.setOnClickListener(v -> {
+            shareQr.setOnClickListener(v -> {
 
                 Intent share = new Intent(Intent.ACTION_SEND);
                 share.setType("*/*");
