@@ -12,6 +12,7 @@ import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Environment;
 import android.provider.MediaStore;
 import android.util.Log;
 import android.view.View;
@@ -25,10 +26,14 @@ import com.applex.authenticationreimagined.modules.main.ui.MainActivity;
 import com.applex.authenticationreimagined.modules.splash.ui.ActivitySplash;
 import com.applex.authenticationreimagined.utilities.preferenceManager.PreferenceManager;
 
+import net.lingala.zip4j.ZipFile;
+
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
 import org.xmlpull.v1.XmlPullParserFactory;
 
+import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 
@@ -70,13 +75,14 @@ public class ActivityZip extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 try {
-//                    String destinationAddress = Environment.getExternalStorageDirectory().getPath();
-//                    ZipFile zipfile = new ZipFile(src, passcode.getText().toString().toCharArray());
-//                    zipfile.extractFile(filename.replace("zip","xml"),destinationAddress);
+
+                    String destinationAddress = Environment.getExternalStorageDirectory().getPath();
+                    ZipFile zipfile = new ZipFile(src, passcode.getText().toString().toCharArray());
+                    zipfile.extractFile(filename.replace("zip","xml"),destinationAddress);
 //                    //new ZipFile(src, passcode.getText().toString().toCharArray()).extractAll(destinationAddress);
 //                    //new ZipFile(src, passcode.getText().toString().toCharArray()).extractFile(filename.replace("zip","xml"), destinationAddress, "unzipped.xml");
-//                    filepath = new StringBuilder().append(Environment.getExternalStorageDirectory().getPath()).append("/").append(filename.replace("zip","xml")).toString();
-                    filepath=src;
+                    filepath = new StringBuilder().append(Environment.getExternalStorageDirectory().getPath()).append("/").append(filename.replace("zip","xml")).toString();
+//                    filepath=src;
 //                    Toast.makeText(getContext(), filepath, Toast.LENGTH_SHORT).show();
                     xmlparser();
                 } catch (Exception e) {
@@ -139,9 +145,9 @@ public class ActivityZip extends AppCompatActivity {
         try {
             xmlFactoryObject = XmlPullParserFactory.newInstance();
             XmlPullParser parser = xmlFactoryObject.newPullParser();
-//            File file = new File(filepath);
-//            InputStream is = new FileInputStream(file);
-            InputStream is = getAssets().open("xyz.xml");
+            File file = new File(filepath);
+            InputStream is = new FileInputStream(file);
+//            InputStream is = getAssets().open("xyz.xml");
             parser.setFeature(XmlPullParser.FEATURE_PROCESS_NAMESPACES, false);
             parser.setInput(is,null);
             parseXML(parser);
