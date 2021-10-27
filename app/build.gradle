@@ -48,4 +48,6 @@ dependencies {
     implementation 'androidmads.library.qrgenearator:QRGenearator:1.0.3'
 
     implementation 'net.lingala.zip4j:zip4j:2.9.0'
+//    implementation 'com.github.smart-fun:XmlToJson:1.1.1'
+
 }

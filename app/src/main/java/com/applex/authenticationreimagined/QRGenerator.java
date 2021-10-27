@@ -54,9 +54,9 @@ public class QRGenerator extends AppCompatActivity {
         setContentView(R.layout.activity_qr_generator);
         Toolbar tb = findViewById(R.id.toolb);
         tb.setTitle("Generate QR");
-        setSupportActionBar(tb);
-        Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setDisplayShowHomeEnabled(true);
+//        setSupportActionBar(tb);
+//        Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
+//        getSupportActionBar().setDisplayShowHomeEnabled(true);
 //        getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_arrow_back_black_24dp);
 
         Button done = findViewById(R.id.done);

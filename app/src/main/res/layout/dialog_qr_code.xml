@@ -19,7 +19,7 @@
             android:layout_marginTop="18dp"
             android:layout_height="wrap_content"
             android:textAlignment="center"
-            android:text="Share Generated QR"
+            android:text="Generated QR"
             />
 
     <ImageView
@@ -37,7 +37,7 @@
         android:padding="5dp"
         android:layout_marginHorizontal="35dp"
         android:layout_marginBottom="10dp"
-        />
+        android:visibility="gone"/>
 
 
 </LinearLayout>
