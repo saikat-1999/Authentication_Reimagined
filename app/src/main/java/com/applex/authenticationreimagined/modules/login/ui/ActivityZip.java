@@ -186,6 +186,9 @@ public class ActivityZip extends AppCompatActivity {
                     else if (tagname.equals("UidData")){
                         text = "UidData";
                     }
+                    else if(tagname.equals("Signature")){
+                        text="Signature";
+                    }
                     else if (text!=null && !text.isEmpty() && text.matches("UidData")){
                         if (tagname.equals("Poi")){
                             userModel.setDob(parser.getAttributeValue(null,"dob"));
@@ -208,6 +211,11 @@ public class ActivityZip extends AppCompatActivity {
                         }
                         else if (tagname.equals("Pht")){
                             userModel.setPhoto(parser.nextText());
+                        }
+                    }
+                    else if(text!=null && !text.isEmpty() && text.matches("Signature")){
+                        if(tagname.equals("SignatureValue")){
+                            userModel.setSignatureValue(parser.nextText());
                         }
                     }
                     break;

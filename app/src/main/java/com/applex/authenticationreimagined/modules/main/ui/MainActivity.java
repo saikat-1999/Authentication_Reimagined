@@ -66,10 +66,11 @@ public class MainActivity extends AppCompatActivity {
         String state = preferenceManager.getCurrentUser().getState();
         String pincode = preferenceManager.getCurrentUser().getPc();
         String country = preferenceManager.getCurrentUser().getCountry();
+        String signature = preferenceManager.getCurrentUser().getSignatureValue();
 //        String photo = preferenceManager.getCurrentUser().getPhoto();
 
         data = name + "\n" + dob + "\n" + gender + "\n" +
-                house + "\n" + street + "\n" + po + "\n" + dist + "\n" + state + "\n" + pincode + "\n" + country;
+                house + "\n" + street + "\n" + po + "\n" + dist + "\n" + state + "\n" + pincode + "\n" + country + "\n" + signature;
 
         qr = findViewById(R.id.qr);
         image_text = findViewById(R.id.image_text);
