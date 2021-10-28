@@ -50,8 +50,6 @@ import java.util.Objects;
 
 import androidmads.library.qrgenearator.QRGContents;
 import androidmads.library.qrgenearator.QRGEncoder;
-//import static com.applex.snaplingo.activities.OcrResultActivity.resultUri;
-import static com.applex.authenticationreimagined.modules.main.ui.OcrResultActivity.resultUri;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -64,7 +62,7 @@ public class MainActivity extends AppCompatActivity {
     private LinearLayout layout;
     private ImageView qrImageview, shareQr;
 
-
+    public static Uri resultUri;
     private String[] cameraPermission;
     private static final int CAMERA_REQUEST_CODE = 200;
 
