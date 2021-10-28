@@ -126,6 +126,7 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+
     }
 
     private void GenerateQR(String code) {
