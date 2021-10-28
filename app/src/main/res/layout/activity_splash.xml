@@ -8,13 +8,13 @@
     android:fitsSystemWindows="true"
     android:background="@color/white"
     android:orientation="vertical"
-    tools:context=".featureModules.onBoardingModule.ui.splash.activities.SplashActivity">
+    tools:context=".modules.splash.ui.ActivitySplash">
 
     <ImageView
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:src="@drawable/ic_launcher_background"
         android:layout_centerInParent="true"
+        android:src="@drawable/ic_baseline_verified_user_24"
         tools:ignore="UseAppTint" />
 
     <ProgressBar

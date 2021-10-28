@@ -21,7 +21,7 @@ public class ActivitySplash extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_splash2);
+        setContentView(R.layout.activity_splash);
 
         preferenceManager = new PreferenceManager(ActivitySplash.this);
 
