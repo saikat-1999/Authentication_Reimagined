@@ -58,11 +58,20 @@ public class MainActivity extends AppCompatActivity {
 
         preferenceManager = new PreferenceManager(MainActivity.this);
 
-        String refid= preferenceManager.getCurrentUser().getReferenceId();
+//        String refid= preferenceManager.getCurrentUser().getReferenceId();
         String name= preferenceManager.getCurrentUser().getName();
+        String dob = preferenceManager.getCurrentUser().getDob();
+        String gender = preferenceManager.getCurrentUser().getGender();
+        String house = preferenceManager.getCurrentUser().getHouse();
+        String street = preferenceManager.getCurrentUser().getStreet();
+        String po= preferenceManager.getCurrentUser().getPo();
+        String dist = preferenceManager.getCurrentUser().getDist();
+        String state = preferenceManager.getCurrentUser().getState();
+        String pincode = preferenceManager.getCurrentUser().getPc();
         String country= preferenceManager.getCurrentUser().getCountry();
 
-        data = refid + "\n" + name + "\n" + country;
+        data = name + "\n" + dob + "\n" + gender + "\n" +
+                house + "\n" + street + "\n" + po + "\n" + dist + "\n" + state + "\n" + pincode + "\n" + country;
 
         qr = findViewById(R.id.qr);
         image_text = findViewById(R.id.image_text);
