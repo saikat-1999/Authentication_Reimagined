@@ -41,7 +41,7 @@
                 android:layout_marginTop="18dp"
                 android:layout_height="wrap_content"
                 android:textAlignment="center"
-                android:text="Your QR Code will be displayed here" />
+                android:text="@string/your_qr_code_will_be_displayed_here" />
 
             <LinearLayout
                 android:id="@+id/layout"
