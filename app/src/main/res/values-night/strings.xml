@@ -2,4 +2,13 @@
 <resources>
     <string name="an_initiative_of">an initiative of</string>
     <string name="applex_in">applex.in</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="generate_qr">Generate QR</string>
+    <string name="generated_qr">Generated QR</string>
+    <string name="choose_zip">Choose zip</string>
+    <string name="enter_passcode">Enter passcode</string>
+    <string name="unzip">Unzip</string>
+    <string name="enter_sharecode_to_generate_qr">Enter Sharecode to Generate QR</string>
+    <string name="passcode">Passcode</string>
+    <string name="done">DONE</string>
 </resources>

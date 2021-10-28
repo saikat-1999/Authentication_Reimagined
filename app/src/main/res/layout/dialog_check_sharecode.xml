@@ -15,11 +15,11 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Enter Sharecode to Generate QR"
+            android:text="@string/enter_sharecode_to_generate_qr"
             android:paddingHorizontal="10dp"
             android:paddingVertical="5dp"
             android:textColor="@color/black"
-            android:textSize="20sp"/>
+            android:textSize="18sp"/>
 
     </LinearLayout>
 
@@ -41,7 +41,7 @@
         android:id="@+id/sharecode"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Passcode"
+        android:hint="@string/passcode"
         android:textSize="16sp"
         android:inputType="textCapSentences"
         android:background="@drawable/background_rectangle"
@@ -56,7 +56,7 @@
             android:id="@+id/submit"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="DONE"
+            android:text="@string/done"
             android:paddingHorizontal="25dp"
             android:paddingVertical="10dp"
             android:gravity="end"

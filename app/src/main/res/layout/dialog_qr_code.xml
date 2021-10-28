@@ -19,7 +19,7 @@
             android:layout_marginTop="18dp"
             android:layout_height="wrap_content"
             android:textAlignment="center"
-            android:text="Generated QR"
+            android:text="@string/generated_qr"
             />
 
     <ImageView
