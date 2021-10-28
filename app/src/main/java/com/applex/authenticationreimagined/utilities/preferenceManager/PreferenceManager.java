@@ -29,6 +29,7 @@ public class PreferenceManager {
     private UserModel currentUser;
     private String sharecode;
 
+
     @SuppressLint("CommitPrefEdits")
     public PreferenceManager(Context context){
         if(context != null) {
